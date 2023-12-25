@@ -100,7 +100,7 @@ local function set_opts(opts)
     if opts.set_default_events_exclude_filetype ~= nil and type(opts.set_default_events_exclude_filetype) == "table" then
         C.set_default_events_exclude_filetype = opts.set_default_events_exclude_filetype
     end
-    
+
     if opts.set_previous_events ~= nil and type(opts.set_previous_events) == "table" then
         C.set_previous_events = opts.set_previous_events
     end
