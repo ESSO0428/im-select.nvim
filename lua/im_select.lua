@@ -43,7 +43,7 @@ local C = {
     -- Restore the default input method state when the following events are triggered
     set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
     -- Restore the default input method state (exclude filetype)
-    set_default_events_exclude_filetype = { 'TelescopePrompt' }
+    set_default_events_exclude_filetype = { 'TelescopePrompt' },
     -- Restore the previous used input method state when the following events are triggered
     set_previous_events = { "InsertEnter" },
 
