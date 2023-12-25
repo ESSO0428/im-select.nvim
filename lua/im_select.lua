@@ -42,6 +42,8 @@ local C = {
 
     -- Restore the default input method state when the following events are triggered
     set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
+    -- Restore the default input method state (exclude filetype)
+    set_default_events_exclude_filetype = { 'TelescopePrompt' }
     -- Restore the previous used input method state when the following events are triggered
     set_previous_events = { "InsertEnter" },
 
@@ -95,6 +97,10 @@ local function set_opts(opts)
         C.set_default_events = opts.set_default_events
     end
 
+    if opts.set_default_events_exclude_filetype ~= nil and type(opts.set_default_events_exclude_filetype) == "table" then
+        C.set_default_events_exclude_filetype = opts.set_default_events_exclude_filetype
+    end
+    
     if opts.set_previous_events ~= nil and type(opts.set_previous_events) == "table" then
         C.set_previous_events = opts.set_previous_events
     end
@@ -153,6 +159,9 @@ local function change_im_select(cmd, method)
 end
 
 local function restore_default_im()
+    if vim.tbl_contains(C.set_default_events_exclude_filetype, vim.bo.filetype) then
+        return
+    end
     local current = get_current_select(C.default_command)
     vim.api.nvim_set_var("im_select_saved_state", current)
 
