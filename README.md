@@ -181,6 +181,9 @@ Options with its default values
             -- Restore the default input method state when the following events are triggered
             set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
 
+            -- Restore the default input method state (exclude filetype)
+            set_default_events_exclude_filetype = { 'TelescopePrompt' },
+
             -- Restore the previous used input method state when the following events
             -- are triggered, if you don't want to restore previous used im in Insert mode,
             -- e.g. deprecated `disable_auto_restore = 1`, just let it empty
