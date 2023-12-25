@@ -179,7 +179,7 @@ Options with its default values
             default_command = 'im-select.exe',
 
             -- Restore the default input method state when the following events are triggered
-            set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
+            set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" }, -- or right also very good : { "VimEnter", "InsertLeavePre" }
 
             -- Restore the default input method state (exclude filetype)
             set_default_events_exclude_filetype = { 'TelescopePrompt' },
