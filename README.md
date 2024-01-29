@@ -147,7 +147,7 @@ A good-enough minimal config in Lazy.nvim
 
 ```lua
 {
-    "keaising/im-select.nvim",
+    "ESSO0428/im-select.nvim",
     config = function()
         require("im_select").setup({})
     end,
@@ -158,7 +158,7 @@ Options with its default values
 
 ```lua
 {
-    "keaising/im-select.nvim",
+    "ESSO0428/im-select.nvim",
     config = function()
         require('im_select').setup({
             -- IM will be set to `default_im_select` in `normal` mode
